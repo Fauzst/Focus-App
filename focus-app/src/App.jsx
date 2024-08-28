@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Navigation from './components/Navigation'
 import Main from './components/Main'
 import './App.css'
+import CircleNav from './components/CircleNav'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,7 +20,9 @@ function App() {
         <Main />
       </div>
      </div>
-     <div className='bg-green-600 h-20 w-20 fixed right-8 bottom-12 rounded-full lg:hidden'></div>
+     <div className='bg-green-600 h-20 w-20 fixed right-8 bottom-12 rounded-full lg:hidden'>
+        <CircleNav />
+     </div>
     </>
   )
 }
