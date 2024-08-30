@@ -31,6 +31,14 @@ export default {
           '0%': {transform: 'translate(0, 0rem)'},
           '100%': {transform: 'translate(0, 5rem)'}
         },
+        spinRight: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(180deg)' },
+        },
+        spinLeft: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-180deg)' },
+        },
       },
       animation: {
         slideRight1: 'slideRight1 0.5s ease-out forwards',
@@ -39,6 +47,8 @@ export default {
         slideLeft1: 'slideLeft1 0.5s ease-out forwards',
         slideLeft2: 'slideLeft2 0.5s ease-out forwards',
         slideDown: 'slideDown 0.5s ease-out forwards',
+        spinRight: 'spinRight 0.5s ease-in ',
+        spinLeft: 'spinLeft 0.5s ease-out ',
       }
 
     },
