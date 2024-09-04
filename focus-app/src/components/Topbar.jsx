@@ -20,20 +20,14 @@ import Leisure from "./Leisure";
 // Data
 
 
-function Todo(){
+
+function Topbar(){
     
     return (
         <>
-            <div className="flex justify-center py-6 h-full w-full">
-                {/*userState.taskNumber == 0 && 
-                    <div className="flex flex-col justify-center align-middle">
-                        <img src={noTask} alt="No Task Image FIller" className="lg:h-[40vw] md:h-[50vw]"/>
-                        <h2 className="text-center text-xl font-semibold">It seems you don't have any tasks at the moment...</h2>
-                    </div>
-                */}
-            </div>
+            <h1 className="flex justify-center align-middle py-2 text-white font-bold text-6xl">HSHSS</h1>
         </>
     )
 }
 
-export default Todo
+export default Topbar

@@ -5,6 +5,8 @@ import Navigation from './components/Navigation'
 import Main from './components/Main'
 import './App.css'
 import CircleNav from './components/CircleNav'
+import Topbar from './components/Topbar'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +14,10 @@ function App() {
   return (
     <>
      <div className='grid grid-cols-1 grid-rows-12 lg:grid-cols-6 lg:grid-rows-12 w-screen h-screen'>
-      <div className="bg-stone-800 row-span-1 lg:row-span-1 lg:col-span-6"></div>
+      <div className="bg-stone-800 row-span-1 lg:row-span-1 lg:col-span-6">
+        <Topbar />  
+      </div>
+
       <div className="bg-orange-500 max-lg:hidden lg:row-span-11 lg:col-span-1 lg:visible">
         <Navigation />
       </div>
