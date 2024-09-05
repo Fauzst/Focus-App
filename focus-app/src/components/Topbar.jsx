@@ -1,5 +1,5 @@
 // React Sources
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {Link, Routes, Route} from "react-router-dom";
 
 //Icons
@@ -18,14 +18,20 @@ import Leisure from "./Leisure";
 
 
 // Data
-
+import { PageContext } from "../App";
 
 
 function Topbar(){
-    
+    const [currentPage, setCurrentPage] = useContext(PageContext);
+
+
     return (
         <>
-            <h1 className="flex justify-center align-middle py-2 text-white font-bold text-6xl">HSHSS</h1>
+
+            
+                <h1 className="flex justify-center align-middle py-2 text-white font-bold text-6xl">{currentPage}</h1>
+
+        
         </>
     )
 }
