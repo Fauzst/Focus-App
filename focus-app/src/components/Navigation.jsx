@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom"; // <-- Import useLocation
 import { PageContext } from "../App";
 
+
 function Navigation() {
     const [currentPage, setCurrentPage] = useContext(PageContext);
     const location = useLocation();  // <-- Get the current route from useLocation
@@ -27,9 +28,15 @@ function Navigation() {
     return (
         <nav>
             <ul>
-                <li><Link to="/">Todo List</Link></li>
-                <li><Link to="/pomodoro">Pomodoro</Link></li>
-                <li><Link to="/leisure">Leisure</Link></li>
+                <div>
+                    <li className="border-b py-4 px-2 font-semibold text-white"><Link to="/">Todo List</Link></li>
+                </div>
+                
+                <div>
+                    <li className="border-b py-4 px-2 font-semibold text-white"><Link to="/pomodoro">Pomodoro</Link></li>
+
+                </div>
+                <li className="border-b py-4 px-2 font-semibold text-white"><Link to="/leisure">Leisure</Link></li>
             </ul>
         </nav>
     );

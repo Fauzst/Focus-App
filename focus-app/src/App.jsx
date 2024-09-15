@@ -8,15 +8,35 @@ import CircleNav from './components/CircleNav'
 import Topbar from './components/Topbar'
 
 export const PageContext = createContext();
+export const userContext = createContext();
 
 function App() {
   // Contexts
-
+  const [userInfo, setUserInfo] = useState({
+    user: 'Joshua',
+    taskNumber: 3,
+    tasks: [
+      {
+        id: 1,
+        taskName: "Maglolo"
+      },
+      {
+        id: 2,
+        taskName: "Jabol Supol"
+      },
+      {
+        id: 3,
+        taskName: "Kumain"
+      }
+    ],
+    reward: 0,
+  });
 
   const [currentPage, setCurrentPage] = useState('todo');
 
   return (
     <>
+      <userContext.Provider value={[userInfo,setUserInfo]}>
       <PageContext.Provider value={[currentPage,setCurrentPage]}>
         <div className='grid grid-cols-1 grid-rows-12 lg:grid-cols-6 lg:grid-rows-12 w-screen h-screen'>
           
@@ -38,6 +58,7 @@ function App() {
             <CircleNav />
         </div>
       </PageContext.Provider>
+      </userContext.Provider>
     </>
   )
 }

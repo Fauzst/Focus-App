@@ -29,7 +29,7 @@ function Topbar(){
         <>
 
             
-                <h1 className="flex justify-center align-middle py-2 text-white font-bold text-6xl">{currentPage}</h1>
+                <h1 className="flex justify-center align-middle text-white font-bold text-6xl">{currentPage}</h1>
 
         
         </>
