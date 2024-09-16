@@ -18,18 +18,22 @@ function App() {
     tasks: [
       {
         id: 1,
-        taskName: "Maglolo"
+        taskName: "Maglolo",
+        difficulty: 1,
       },
       {
         id: 2,
-        taskName: "Jabol Supol"
+        taskName: "Jabol Supol",
+        difficulty: 1,
       },
       {
         id: 3,
-        taskName: "Kumain"
+        taskName: "Kumain",
+        difficulty: 1,
       }
     ],
     reward: 0,
+    isAddingTask: false,
   });
 
   const [currentPage, setCurrentPage] = useState('todo');

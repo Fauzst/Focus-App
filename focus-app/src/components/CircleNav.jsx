@@ -1,13 +1,19 @@
 import { useContext, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom"; // <-- Import useLocation
+
+// Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faClock, faUmbrellaBeach, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
+
+// Contexts
 import { PageContext } from "../App";
+import { userContext } from "../App";
 
 function CircleNav() {
     const [activeNav, setActiveNav] = useState(false);
     const [currentPage, setCurrentPage] = useContext(PageContext);
     const location = useLocation();  // <-- Get the current location
+    const [userInfo,setUserInfo] = useContext(userContext);
 
     // Update currentPage based on the current route
     useEffect(() => {
@@ -28,6 +34,15 @@ function CircleNav() {
 
     function handleNavClick() {
         setActiveNav(prev => !prev);
+    }
+
+    function handleAddTask(event){
+        setUserInfo((prevState) => ({
+            ...prevState,
+            isAddingTask: !prevState.isAddingTask
+        }))
+        
+        console.log(userInfo.isAddingTask)
     }
 
     return (
@@ -59,7 +74,7 @@ function CircleNav() {
                         </nav>
                     </div>
                     
-                    <div className={`flex items-center justify-center z-10 rounded-full h-16 w-16 bg-orange-500 fixed bottom-[9rem] right-10 ${activeNav ? 'animate-slideTop' : 'animate-slideDown'}`}>
+                    <div onClick={handleAddTask} className={`flex items-center justify-center z-10 rounded-full h-16 w-16 bg-orange-500 fixed bottom-[9rem] right-10 ${activeNav ? 'animate-slideTop' : 'animate-slideDown'}`}>
                         <nav>
                             <ul>
                                 <Link name="todo" to="/" className="py-5 px-6 rounded-full w-full h-full">

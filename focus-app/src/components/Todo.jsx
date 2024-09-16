@@ -15,7 +15,7 @@ import noTask from '../assets/no-task.png'
 //Components
 import Pomodoro from "./Pomodoro";
 import Leisure from "./Leisure";
-
+import AddTask from "./AddTask";
 
 // Data
 import { userContext } from "../App";
@@ -24,7 +24,7 @@ function Todo(){
     const [userInfo, setUserInfo] = useContext(userContext);
 
     const task = userInfo.tasks;
-    console.log(task);
+
     const taskMap = task.map((task) => {
         return(
         <div key={task.id} className="flex gap-6 flex-row items-center px-4 border-2 border-orange-400 w-[95%] h-16 rounded-md">
@@ -42,14 +42,21 @@ function Todo(){
             
           setUserInfo((prevState) => {
           
-
+            const taskDiff = prevState.tasks.find((task) => task.id === taskId);
+            if (!taskDiff) {
+                console.log("Not Founds")
+                return prevState
+            }
             const taskUpdate = prevState.tasks.filter((task) => task.id !== taskId);
+            const rewardUpdate = prevState.reward + taskDiff.difficulty;
+
             const taskUpdateNumber = taskUpdate.length;
            
             return {
                 ...prevState,
                 tasks: taskUpdate,
                 taskNumber: taskUpdateNumber,
+                reward: rewardUpdate
             }
           }); 
             
@@ -69,6 +76,8 @@ function Todo(){
                         </div>
                     </>)
                 }
+                {userInfo.isAddingTask == true ? <AddTask /> : ""}
+
             </div>
         </>
     )
