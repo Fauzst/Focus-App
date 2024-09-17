@@ -20,16 +20,19 @@ function App() {
         id: 1,
         taskName: "Maglolo",
         difficulty: 1,
+        descrption: "Waaaah"
       },
       {
         id: 2,
         taskName: "Jabol Supol",
         difficulty: 1,
+         descrption: "Waaaah"
       },
       {
         id: 3,
         taskName: "Kumain",
         difficulty: 1,
+         descrption: "Waaaah"
       }
     ],
     reward: 0,

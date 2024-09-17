@@ -1,5 +1,5 @@
 // React Sources
-import { useState,useContext } from "react";
+import { useState,useContext, useEffect } from "react";
 import {Link, Routes, Route} from "react-router-dom";
 
 //Icons
@@ -23,9 +23,15 @@ import { userContext } from "../App";
 function Todo(){
     const [userInfo, setUserInfo] = useContext(userContext);
 
-    const task = userInfo.tasks;
+    const [tasks, setTasks] = useState([]);
 
-    const taskMap = task.map((task) => {
+    useEffect(() => {
+        if (userInfo && userInfo.tasks){
+            setTasks(userInfo.tasks);
+        }
+    }, [userInfo.tasks]);
+
+    const taskMap = tasks.map((task) => {
         return(
         <div key={task.id} className="flex gap-6 flex-row items-center px-4 border-2 border-orange-400 w-[95%] h-16 rounded-md">
             <input type="checkbox" id={task.id} onClick={handleCheckbox} className=""></input>
