@@ -43,7 +43,9 @@ function Navigation() {
                 <li className="border-b py-4 px-2 font-semibold text-white"><Link to="/">Todo List</Link></li>
                 <li className="border-b py-4 px-2 font-semibold text-white"><Link to="/pomodoro">Pomodoro</Link></li>
                 <li className="border-b py-4 px-2 font-semibold text-white"><Link to="/leisure">Leisure</Link></li>
+                { location.pathname == "/" &&
                 <li className="border-b py-4 px-2 font-semibold text-white" onClick={handleAddTask}>Add Task</li>
+                }
             </ul>
         </nav>
     );

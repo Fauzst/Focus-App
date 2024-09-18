@@ -24,7 +24,7 @@ function AddTask(){
         for (let task of tasksArray){
            if (task.id > currentId){
             currentId = task.id;
-            console.log(currentId)
+            
            }
         }
 
@@ -40,9 +40,9 @@ function AddTask(){
         
 
         const addedTasks = userInfo.tasks;
-        console.log(addedTasks)
+        
         var taskLength = addedTasks.length;
-        console.log(taskLength)
+        
 
         setUserInfo((prevState) => ({
             ...prevState,
@@ -50,7 +50,7 @@ function AddTask(){
             taskNumber: taskLength
         }))
 
-        console.log(Array.isArray(userInfo.tasks))
+        console.log(userInfo.tasks);
     }
 
     //Handle Cancel Click on Add Task
@@ -63,7 +63,7 @@ function AddTask(){
 
     return (
         <>
-           <div className="border-4 border-orange-600 bg-orange-200 h-[25rem] w-[40rem] rounded-md fixed bottom-64">
+           <div className="border-4 border-orange-600 bg-orange-200 h-[45%] w-[60%] rounded-md fixed bottom-64">
                     <div className="flex flex-col gap-y-4 py-5 px-8">
                         <label  htmlFor="taskName" className="font-semibold text-xl">Task Name:</label>
                         <input id="task-name" type="text" className="h-10 bg-orange-100 border-2 border-orange-300 rounded-md px-5"/>
