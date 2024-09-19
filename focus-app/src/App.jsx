@@ -36,6 +36,11 @@ function App() {
       }
     ],
     reward: 0,
+    time: {
+            hoursDisplay: 0,
+            minutesDisplay: 0,
+            secondsDisplay: 0,
+          },
     isAddingTask: false,
   });
 
