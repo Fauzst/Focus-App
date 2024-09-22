@@ -11,35 +11,7 @@ function Leisure() {
   const [play, setPlay] = useState(false);
   const [totalSecs, setTotalSecs] = useState(1000000); // Set the initial total seconds
 
-  useEffect(() => {
-    let interval;
-    
-    if (play && totalSecs > 0) {
-      interval = setInterval(() => {
-        setTotalSecs((prevSecs) => prevSecs - 1);
-
-        const hrsDisplay = Math.floor(totalSecs / 3600);
-        const minsDisplay = Math.floor((totalSecs % 3600) / 60);
-        const secsDisplay = totalSecs % 60;
-
-        setUserInfo((prevState) => ({
-          ...prevState,
-          time: {
-            hoursDisplay: hrsDisplay,
-            minutesDisplay: minsDisplay,
-            secondsDisplay: secsDisplay,
-          },
-        }));
-      }, 1000);
-    }
-
-    // Clear interval when component unmounts or when play is set to false
-    return () => clearInterval(interval);
-  }, [play, totalSecs, setUserInfo]);
-
-  function handlePlayTimer() {
-    setPlay((prevPlay) => !prevPlay); // Toggle play state
-  }
+    //INSERT TIMER HERE WITH REWARD ALGORITHM
 
   return (
     <>  
@@ -47,7 +19,11 @@ function Leisure() {
         <h1 className="text-orange-500 font-bold text-4xl py-6 px-10">
           This is your Free Time!!!
         </h1>
-        
+        <h1>asdfsd</h1>
+        <h1>asdfsd</h1>
+        <h1>as3</h1>
+        <h1>xcv</h1>
+        <h1>sdfsd</h1>
         <h1 className="text-orange-500 font-bold text-8xl">
           {`${userInfo?.time?.hoursDisplay?.toString().padStart(2, '0')} : ${userInfo?.time?.minutesDisplay?.toString().padStart(2, '0')} : ${userInfo?.time?.secondsDisplay?.toString().padStart(2, '0')}`}
         </h1>
