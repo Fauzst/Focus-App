@@ -10,8 +10,13 @@ function Leisure() {
   const [userInfo, setUserInfo] = useContext(userContext);
   const [play, setPlay] = useState(false);
   const [totalSecs, setTotalSecs] = useState(1000000); // Set the initial total seconds
-
-    //INSERT TIMER HERE WITH REWARD ALGORITHM
+  var secs = 10;
+  useEffect(() => {
+    function handlePlayTimer() {
+      secs--;
+      setTimeout(() => {},1000);
+    }
+  })
 
   return (
     <>  
