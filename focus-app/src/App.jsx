@@ -18,19 +18,19 @@ function App() {
     tasks: [
       {
         id: 1,
-        taskName: "Maglolo",
+        taskName: "Clean the Dishes",
         difficulty: 1,
         descrption: "Waaaah"
       },
       {
         id: 2,
-        taskName: "Jabol Supol",
+        taskName: "Exercise",
         difficulty: 1,
          descrption: "Waaaah"
       },
       {
         id: 3,
-        taskName: "Kumain",
+        taskName: "Study",
         difficulty: 1,
          descrption: "Waaaah"
       }

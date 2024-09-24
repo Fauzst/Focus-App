@@ -9,7 +9,7 @@ import { userContext } from '../App';
 function Leisure() {
   const [userInfo, setUserInfo] = useContext(userContext);
   const [play, setPlay] = useState(false);
-  const [totalSecs, setTotalSecs] = useState(10); // Set the initial total seconds
+  const [totalSecs, setTotalSecs] = useState(userInfo.reward); // Set the initial total seconds
 
   // This useEffect runs when the `play` state changes or when `totalSecs` updates.
   useEffect(() => {

@@ -54,7 +54,7 @@ function Todo(){
                 return prevState
             }
             const taskUpdate = prevState.tasks.filter((task) => task.id !== taskId);
-            const rewardUpdate = prevState.reward + taskDiff.difficulty;
+            const rewardUpdate = prevState.reward + (taskDiff.difficulty * 10);
 
             const taskUpdateNumber = taskUpdate.length;
            
